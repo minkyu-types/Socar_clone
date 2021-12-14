@@ -1,4 +1,4 @@
-package com.studying.myapplication;
+package com.studying.socarclone.starting;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -7,17 +7,15 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.studying.socarclone.R;
 
 public class AuthenticationActivity extends AppCompatActivity {
     TextView textview_confirm;
@@ -28,7 +26,7 @@ public class AuthenticationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_authentication);
+        setContentView(R.layout.starting_activity_authentication);
 
         textview_confirm = findViewById(R.id.textview_confirm);
         textview_confirm.setOnClickListener(view -> {
@@ -79,7 +77,7 @@ public class AuthenticationActivity extends AppCompatActivity {
         } else {
             // 모두 허용 상태
             Toast.makeText(this, "권한 모두 허용됨", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, GuideActivity.class);
             startActivity(intent);
         }
     }

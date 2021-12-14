@@ -1,4 +1,4 @@
-package com.studying.myapplication;
+package com.studying.socarclone;
 
 import android.content.Context;
 
