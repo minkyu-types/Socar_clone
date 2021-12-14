@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "804133998351",
+    "project_id": "socarclone-2b043",
+    "storage_bucket": "socarclone-2b043.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804133998351:android:afe7ea5ff62f742820b87a",
+        "android_client_info": {
+          "package_name": "com.studying.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "804133998351-ol5atabs9bou0olb699mpjqi2ec5hr55.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM7TCIodHuedKuX7DIEKvdfKVejRK1LrM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "804133998351-ol5atabs9bou0olb699mpjqi2ec5hr55.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

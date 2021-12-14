@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AuthenticationActivity"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearlayout_authentication_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="24dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:text="쏘카 권한 안내"
+                android:textColor="@color/black"
+                android:autoSizeTextType="uniform"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="쏘카는 아래 권한들을 필요로 합니다.\n서비스 사용 중 앱에서 요청 시 허용해주세요."
+                android:textColor="#292929"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="필수 접근 권한"
+                android:textColor="#2FA9FA"
+                android:layout_marginTop="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:layout_marginTop="12dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="10"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:text="·   카메라"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:text="운전 면허증은 반드시 스캔하여 등록해야하며, 운행 전 차량 확인 시 반드시 실시간 촬영이 필요합니다."/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="10"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:text="·   전화"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:text="본인 이용 확인을 위해 쏘카 앱을 사용 중인 휴대폰의 전화번호를 조회합니다."/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="선택 접근 권한"
+                android:textColor="#2FA9FA"
+                android:layout_marginTop="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:layout_marginTop="12dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="10"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:text="·   위치"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:text="내 현재 위치는 쏘카존 찾기, 부름 서비스, 차량 제어를 위한 필수 정보로 사용됩니다."/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="10"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:text="·   저장공간"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:text="운행 전 차량 확인 시 촬영한 사진이\n저장됩니다."/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="10"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:text="·   블루투스"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:text="차량을 제어할 때 블루투스를 이용할 수 있습니다.(문열기, 문잠금 등등)"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="10"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="·  "
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9.6"
+                        android:text="선택 접근 권한을 허용하면 앱을 더 편리하게 쓸 수 있습니다. 필수 접근 권한만 허용해도 기본 서비스는 이용할 수 있습니다."/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="10"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:text="·  "
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9.6"
+                        android:text="접근 권한은 휴대폰의 [설정]>[애플리케이션]>[쏘카]>[권한]에서 언제든지 바꿀 수 있어요."/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textview_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="확인"
+            android:textColor="@color/white"
+            android:background="#2FA9FA"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

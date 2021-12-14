@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="auth_weight_title">2,5</string>
+    <string name="auth_weight_content">7.5</string>
+</resources>
