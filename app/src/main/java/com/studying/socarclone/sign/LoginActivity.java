@@ -41,6 +41,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        loginBinding.buttonBack.setOnClickListener(view -> {
+            finish();
+        });
     }
 
     @Override
