@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".sign.LoginActivity"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textview_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputlayout_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="가입한 이메일 주소 입력"
+        app:layout_constraintTop_toBottomOf="@id/textview_login">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textinputedittext_email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputlayout_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="비밀번호 입력"
+        app:layout_constraintTop_toBottomOf="@id/textinputlayout_email">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textinputedittext_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인하기"
+        android:textSize="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textinputlayout_password"/>
+
+    <TextView
+        android:id="@+id/textview_find_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가입정보 찾기"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/button_login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_icon"
+        android:layout_width="0sp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageview_kakao"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/icon_kakao"
+        android:scaleType="centerCrop"
+        app:civ_border_overlay="true"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintTop_toBottomOf="@id/guideline_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageview_naver"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/icon_naver"
+        app:civ_border_overlay="true"
+        app:layout_constraintTop_toBottomOf="@id/guideline_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageview_facebook"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/icon_facebook"
+        app:civ_border_overlay="true"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintTop_toBottomOf="@id/guideline_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

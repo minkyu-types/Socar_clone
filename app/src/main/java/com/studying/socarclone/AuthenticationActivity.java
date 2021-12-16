@@ -1,4 +1,4 @@
-package com.studying.socarclone.starting;
+package com.studying.socarclone;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -15,18 +15,16 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.studying.socarclone.R;
+import com.studying.socarclone.starting.GuideActivity;
 
 public class AuthenticationActivity extends AppCompatActivity {
     TextView textview_confirm;
-    int permission_camera, permission_location, permission_storage, permission_phone;
-    int check_allpermissions;
 
     @RequiresApi(api = 31)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.starting_activity_authentication);
+        setContentView(R.layout.activity_authentication);
 
         textview_confirm = findViewById(R.id.textview_confirm);
         textview_confirm.setOnClickListener(view -> {

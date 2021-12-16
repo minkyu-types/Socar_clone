@@ -15,9 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SocarClone">
-        <activity android:name="com.studying.socarclone.starting.GuideActivity"></activity>
-        <activity android:name="com.studying.socarclone.MainActivity" />
-        <activity android:name="com.studying.socarclone.starting.AuthenticationActivity">
+        <activity android:name="com.studying.socarclone.sign.LoginActivity"/>
+        <activity android:name="com.studying.socarclone.sign.RegisterActivity"/>
+        <activity android:name="com.studying.socarclone.starting.GuideActivity"/>
+        <activity android:name="com.studying.socarclone.MainActivity"/>
+        <activity android:name="com.studying.socarclone.AuthenticationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

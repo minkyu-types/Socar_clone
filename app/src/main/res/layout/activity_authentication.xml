@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".starting.AuthenticationActivity"
-    android:fillViewport="true">
+    tools:context=".AuthenticationActivity"
+    android:fillViewport="true"
+    tools:viewBindingIgnore="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -40,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="필수 접근 권한"
-                android:textColor="#2FA9FA"
+                android:textColor="@color/socar_color"
                 android:layout_marginTop="16dp"/>
 
             <LinearLayout
@@ -91,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="선택 접근 권한"
-                android:textColor="#2FA9FA"
+                android:textColor="@color/socar_color"
                 android:layout_marginTop="16dp"/>
 
             <LinearLayout
@@ -203,7 +204,7 @@
             android:layout_height="60dp"
             android:text="확인"
             android:textColor="@color/white"
-            android:background="#2FA9FA"
+            android:background="@color/socar_color"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"/>
 

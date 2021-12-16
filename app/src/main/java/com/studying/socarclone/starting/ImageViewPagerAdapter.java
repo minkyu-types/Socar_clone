@@ -5,16 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.studying.socarclone.R;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class ImageViewPagerAdapter extends PagerAdapter {
     private Context mContext = null;
@@ -31,7 +26,7 @@ public class ImageViewPagerAdapter extends PagerAdapter {
 
         if(mContext != null){
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.starting_activity_guide_item, container, false);
+            view = inflater.inflate(R.layout.activity_guide_item, container, false);
             int pos = position % 5;
 
             ImageView imageView = (ImageView) view.findViewById(R.id.imageview_for_viewpager);
@@ -49,7 +44,7 @@ public class ImageViewPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public int getCount() { return 10; } // 메모리 관리가 필요함, 추후에 추가
+    public int getCount() { return 1000; } // 메모리 관리가 필요함, 추후에 추가
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
