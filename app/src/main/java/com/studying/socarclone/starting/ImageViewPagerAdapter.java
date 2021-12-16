@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -12,8 +13,12 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.studying.socarclone.R;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class ImageViewPagerAdapter extends PagerAdapter {
     private Context mContext = null;
+    private int[] images = {R.drawable.imageview_num1, R.drawable.imageview_num2, R.drawable.imageview_num3, R.drawable.imageview_num4, R.drawable.imageview_num5};
 
     public ImageViewPagerAdapter(Context context){
         mContext = context;
@@ -26,13 +31,13 @@ public class ImageViewPagerAdapter extends PagerAdapter {
 
         if(mContext != null){
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.starting_fragment_page, container, false);
+            view = inflater.inflate(R.layout.starting_activity_guide_item, container, false);
+            int pos = position % 5;
 
             ImageView imageView = (ImageView) view.findViewById(R.id.imageview_for_viewpager);
-            // TO-DO: 여기에 페이지 교체될때마다 이미지 바뀌게 설정하기
+            imageView.setImageResource(images[pos]);
+            container.addView(view);
         }
-
-        container.addView(view);
 
         return view;
     }
@@ -44,9 +49,7 @@ public class ImageViewPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public int getCount() {
-        return 10;
-    }
+    public int getCount() { return 10; } // 메모리 관리가 필요함, 추후에 추가
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
