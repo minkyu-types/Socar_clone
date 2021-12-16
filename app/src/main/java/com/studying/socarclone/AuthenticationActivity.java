@@ -32,6 +32,8 @@ public class AuthenticationActivity extends AppCompatActivity {
         });
     }
 
+
+
     // 권한에 대한 응답이 있을 때 동작하는 메소드
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

@@ -10,9 +10,11 @@ import androidx.fragment.app.Fragment;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.studying.socarclone.R;
 import com.studying.socarclone.databinding.ActivityLoginBinding;
@@ -33,6 +35,12 @@ public class LoginActivity extends AppCompatActivity {
         loginBinding.textviewFindInfo.setText(content);
 
         setContentView(view);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
     }
 
     @Override
