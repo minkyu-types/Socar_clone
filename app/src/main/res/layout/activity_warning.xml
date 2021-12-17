@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".sign.RegisterActivity"
+    android:paddingTop="24dp" android:paddingBottom="16dp"
+    android:paddingRight="16dp" android:paddingLeft="16dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/textview_warning_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="쏘카와 함께\n카셰어링을\n시작하세요"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/textview_warning_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="쏘카는 만 21세 이상부터 이용 가능합니다.\n운전면허 취득 1년 이상부터 이용 가능합니다.\n결제카드와 운전면허증을 준비해주세요."
+        app:layout_constraintTop_toBottomOf="@id/textview_warning_title"/>
+
+    <Button
+        android:id="@+id/button_register_go"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="가입하기"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:letterSpacing="0"
+        android:background="@drawable/edge_button_login"
+        android:backgroundTint="@null"
+        android:layout_marginTop="24dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,7 +26,6 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(view);
     }
 
-
     @Override
     protected void onDestroy() {
         super.onDestroy();

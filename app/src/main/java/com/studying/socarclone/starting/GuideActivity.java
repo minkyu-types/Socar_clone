@@ -27,25 +27,20 @@ public class GuideActivity extends AppCompatActivity {
         guideBinding.viewpagerImage.setOffscreenPageLimit(3);
         // 여기 뷰페이저 자동으로 넘어가게 하는 부분 구현하기
 
-        guideBinding.textviewLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent_login = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent_login);
-            }
+        guideBinding.textviewLogin.setOnClickListener(view -> {
+            Intent intent_login = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(intent_login);
         });
 
-        guideBinding.textviewRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent_register = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(intent_register);
-            }
+        guideBinding.textviewRegister.setOnClickListener(view -> {
+            Intent intent_register = new Intent(getApplicationContext(), RegisterActivity.class);
+            startActivity(intent_register);
         });
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onDestroy() {
+        super.onDestroy();
+        guideBinding = null;
     }
 }
