@@ -9,6 +9,7 @@ import android.view.View;
 import com.studying.socarclone.databinding.ActivityGuideBinding;
 import com.studying.socarclone.sign.LoginActivity;
 import com.studying.socarclone.sign.RegisterActivity;
+import com.studying.socarclone.sign.TermsActivity;
 
 public class GuideActivity extends AppCompatActivity {
     ImageViewPagerAdapter imageViewPagerAdapter;
@@ -33,7 +34,7 @@ public class GuideActivity extends AppCompatActivity {
         });
 
         guideBinding.textviewRegister.setOnClickListener(view -> {
-            Intent intent_register = new Intent(getApplicationContext(), RegisterActivity.class);
+            Intent intent_register = new Intent(getApplicationContext(), TermsActivity.class);
             startActivity(intent_register);
         });
     }

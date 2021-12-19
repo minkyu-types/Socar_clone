@@ -7,6 +7,30 @@
     tools:context=".sign.TermsActivity"
     android:background="#DFDFDF">
 
+    <RelativeLayout
+        android:id="@+id/linearlayout_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <Button
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/arrow_goback"
+            android:layout_marginLeft="16dp"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="약관 동의"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"/>
+    </RelativeLayout>
+
     <LinearLayout
         android:id="@+id/linearlayout_1"
         android:layout_width="match_parent"
@@ -14,7 +38,7 @@
         android:layout_margin="24dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/linearlayout_appbar">
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/checkbox_1"
             android:layout_width="wrap_content"
@@ -75,7 +99,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/checkbox_3"
+                android:id="@+id/checkbox_2_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:button="@null"
@@ -88,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:text="(필수) 쏘카 이용약관"
                 android:layout_marginLeft="12dp"
-                app:layout_constraintStart_toEndOf="@id/checkbox_3"
+                app:layout_constraintStart_toEndOf="@id/checkbox_2_1"
                 app:layout_constraintTop_toTopOf="parent"/>
             <ImageView
                 android:id="@+id/image_inner_1_1"
@@ -117,21 +141,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/checkbox_4"
+                android:id="@+id/checkbox_2_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@null"
                 android:background="@drawable/selector_terms"
+                android:button="@null"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
             <TextView
                 android:id="@+id/textview_inner_1_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="(필수) 개인정보 수집 및 이용 동의"
                 android:layout_marginLeft="12dp"
-                app:layout_constraintStart_toEndOf="@id/checkbox_4"
+                app:layout_constraintStart_toEndOf="@id/checkbox_2_2"
                 app:layout_constraintTop_toTopOf="parent"/>
             <ImageView
                 android:id="@+id/image_inner_1_2"
@@ -162,7 +187,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/checkbox_5"
+                android:id="@+id/checkbox_2_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:button="@null"
@@ -175,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:text="(필수) 위치정보 이용약관"
                 android:layout_marginLeft="12dp"
-                app:layout_constraintStart_toEndOf="@id/checkbox_5"
+                app:layout_constraintStart_toEndOf="@id/checkbox_2_3"
                 app:layout_constraintTop_toTopOf="parent"/>
             <ImageView
                 android:id="@+id/image_inner_1_3"
@@ -203,7 +228,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/checkbox_6"
+                android:id="@+id/checkbox_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:button="@null"
@@ -241,7 +266,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textview_inner_2">
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/checkbox_7"
+                android:id="@+id/checkbox_3_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:button="@null"
@@ -263,7 +288,7 @@
             app:layout_constraintTop_toBottomOf="@id/textview_inner_2"
             app:layout_constraintStart_toEndOf="@id/linearlayout_7_1">
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/checkbox_8"
+                android:id="@+id/checkbox_3_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:button="@null"
@@ -284,7 +309,7 @@
             app:layout_constraintStart_toEndOf="@id/linearlayout_7_2"
             app:layout_constraintTop_toBottomOf="@id/textview_inner_2">
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/checkbox_9"
+                android:id="@+id/checkbox_3_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:button="@null"
