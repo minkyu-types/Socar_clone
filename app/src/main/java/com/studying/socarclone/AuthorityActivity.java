@@ -17,14 +17,14 @@ import android.widget.Toast;
 
 import com.studying.socarclone.starting.GuideActivity;
 
-public class AuthenticationActivity extends AppCompatActivity {
+public class AuthorityActivity extends AppCompatActivity {
     TextView textview_confirm;
 
     @RequiresApi(api = 31)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_authentication);
+        setContentView(R.layout.activity_authority);
 
         textview_confirm = findViewById(R.id.textview_confirm);
         textview_confirm.setOnClickListener(view -> {

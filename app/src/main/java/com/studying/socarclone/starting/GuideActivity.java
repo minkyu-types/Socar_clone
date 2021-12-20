@@ -4,11 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.studying.socarclone.databinding.ActivityGuideBinding;
 import com.studying.socarclone.sign.LoginActivity;
-import com.studying.socarclone.sign.RegisterActivity;
 import com.studying.socarclone.sign.TermsActivity;
 
 public class GuideActivity extends AppCompatActivity {

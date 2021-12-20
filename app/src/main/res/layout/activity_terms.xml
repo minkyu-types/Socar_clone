@@ -8,15 +8,15 @@
     android:background="#DFDFDF">
 
     <RelativeLayout
-        android:id="@+id/linearlayout_appbar"
+        android:id="@+id/relativelayout_appbar"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="48dp"
         android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent">
         <Button
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:background="@drawable/arrow_goback"
             android:layout_marginLeft="16dp"
             android:layout_centerVertical="true"/>
@@ -38,7 +38,7 @@
         android:layout_margin="24dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearlayout_appbar">
+        app:layout_constraintTop_toBottomOf="@id/relativelayout_appbar">
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/checkbox_1"
             android:layout_width="wrap_content"
