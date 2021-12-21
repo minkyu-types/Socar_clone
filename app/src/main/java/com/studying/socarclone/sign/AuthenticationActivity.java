@@ -45,72 +45,106 @@ public class AuthenticationActivity extends AppCompatActivity {
             }
         });
 
-        authenticationBinding.authenticationCheckbox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(authenticationBinding.authCheckbox1.isChecked()){
-                    terms_authenticate_1 = 1;
-                } else {
-                    terms_authenticate_1 = 0;
-                }
-            }
-        });
+        setAllLayoutClickListener();
 
-        authenticationBinding.linearlayoutAuth1.setOnClickListener(view -> {
-            if(authenticationBinding.authCheckbox1.isChecked()){
-                authenticationBinding.authenticationCheckbox1.setEnabled(true);
-                authenticationBinding.authenticationCheckbox2.setEnabled(true);
-                authenticationBinding.authenticationCheckbox3.setEnabled(true);
-                authenticationBinding.authenticationCheckbox4.setEnabled(true);
-                authenticationBinding.authenticationCheckbox5.setEnabled(true);
-            } else {
-                authenticationBinding.authenticationCheckbox1.setEnabled(false);
-                authenticationBinding.authenticationCheckbox2.setEnabled(false);
-                authenticationBinding.authenticationCheckbox3.setEnabled(false);
-                authenticationBinding.authenticationCheckbox4.setEnabled(false);
-                authenticationBinding.authenticationCheckbox5.setEnabled(false);
-            }
-        });
-        authenticationBinding.relativelayoutAuthenticate1.setOnClickListener(view -> {
-            if(authenticationBinding.authenticationCheckbox1.isChecked()){
-                terms_authenticate_1_1 = 1;
-            } else {
-                terms_authenticate_1_1 = 0;
-            }
-        });
-        authenticationBinding.relativelayoutAuthenticate2.setOnClickListener(view -> {
-            if(authenticationBinding.authenticationCheckbox1.isChecked()){
-                terms_authenticate_1_2 = 1;
-            } else {
-                terms_authenticate_1_2 = 0;
-            }
-        });
-        authenticationBinding.relativelayoutAuthenticate3.setOnClickListener(view -> {
-            if(authenticationBinding.authenticationCheckbox1.isChecked()){
-                terms_authenticate_1_3 = 1;
-            } else {
-                terms_authenticate_1_3 = 0;
-            }
-        });
-        authenticationBinding.relativelayoutAuthenticate4.setOnClickListener(view -> {
-            if(authenticationBinding.authenticationCheckbox1.isChecked()){
-                terms_authenticate_1_4 = 1;
-            } else {
-                terms_authenticate_1_4 = 0;
-            }
-        });
-        authenticationBinding.relativelayoutAuthenticate5.setOnClickListener(view -> {
-            if(authenticationBinding.authenticationCheckbox1.isChecked()){
-                terms_authenticate_1_5 = 1;
-            } else {
-                terms_authenticate_1_5 = 0;
-            }
-        });
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         authenticationBinding = null;
+    }
+
+    public void setAllLayoutClickListener() {
+
+        authenticationBinding.authenticationCheckbox1.setClickable(false);
+        authenticationBinding.authenticationCheckbox2.setClickable(false);
+        authenticationBinding.authenticationCheckbox3.setClickable(false);
+        authenticationBinding.authenticationCheckbox4.setClickable(false);
+        authenticationBinding.authenticationCheckbox5.setClickable(false);
+
+        authenticationBinding.linearlayoutAuth1.setOnClickListener(view -> {
+            if(!authenticationBinding.authCheckbox1.isChecked()){
+                authenticationBinding.authCheckbox1.setChecked(true); // 얘 안넣으면 하위 컴포넌트에 종속됩니다 ^^ 부하들이 안놔줌
+                authenticationBinding.authenticationCheckbox1.setChecked(true);
+                authenticationBinding.authenticationCheckbox2.setChecked(true);
+                authenticationBinding.authenticationCheckbox3.setChecked(true);
+                authenticationBinding.authenticationCheckbox4.setChecked(true);
+                authenticationBinding.authenticationCheckbox5.setChecked(true);
+            } else {
+                authenticationBinding.authCheckbox1.setChecked(false);
+                authenticationBinding.authenticationCheckbox1.setChecked(false);
+                authenticationBinding.authenticationCheckbox2.setChecked(false);
+                authenticationBinding.authenticationCheckbox3.setChecked(false);
+                authenticationBinding.authenticationCheckbox4.setChecked(false);
+                authenticationBinding.authenticationCheckbox5.setChecked(false);
+            }
+        });
+
+        authenticationBinding.relativelayoutAuthenticate1.setOnClickListener(view -> {
+            if(!authenticationBinding.authenticationCheckbox1.isChecked()){
+                authenticationBinding.authenticationCheckbox1.setChecked(true);
+
+                if(authenticationBinding.authenticationCheckbox2.isChecked() && authenticationBinding.authenticationCheckbox3.isChecked() && authenticationBinding.authenticationCheckbox4.isChecked() && authenticationBinding.authenticationCheckbox5.isChecked()){
+                    authenticationBinding.authCheckbox1.setChecked(true);
+                    authenticationBinding.authenticationCheckbox1.setChecked(true);
+                }
+            } else {
+                authenticationBinding.authenticationCheckbox1.setChecked(false);
+                authenticationBinding.authCheckbox1.setChecked(false);
+            }
+        });
+        authenticationBinding.relativelayoutAuthenticate2.setOnClickListener(view -> {
+            if(!authenticationBinding.authenticationCheckbox2.isChecked()){
+                authenticationBinding.authenticationCheckbox2.setChecked(true);
+
+                if(authenticationBinding.authenticationCheckbox1.isChecked() && authenticationBinding.authenticationCheckbox3.isChecked() && authenticationBinding.authenticationCheckbox4.isChecked() && authenticationBinding.authenticationCheckbox5.isChecked()){
+                    authenticationBinding.authCheckbox1.setChecked(true);
+                    authenticationBinding.authenticationCheckbox2.setChecked(true);
+                }
+            } else {
+                authenticationBinding.authenticationCheckbox2.setChecked(false);
+                authenticationBinding.authCheckbox1.setChecked(false);
+            }
+        });
+        authenticationBinding.relativelayoutAuthenticate3.setOnClickListener(view -> {
+            if(!authenticationBinding.authenticationCheckbox3.isChecked()){
+                authenticationBinding.authenticationCheckbox3.setChecked(true);
+
+                if(authenticationBinding.authenticationCheckbox1.isChecked() && authenticationBinding.authenticationCheckbox2.isChecked() && authenticationBinding.authenticationCheckbox4.isChecked() && authenticationBinding.authenticationCheckbox5.isChecked()){
+                    authenticationBinding.authCheckbox1.setChecked(true);
+                    authenticationBinding.authenticationCheckbox3.setChecked(true);
+                }
+            } else {
+                authenticationBinding.authenticationCheckbox3.setChecked(false);
+                authenticationBinding.authCheckbox1.setChecked(false);
+            }
+        });
+        authenticationBinding.relativelayoutAuthenticate4.setOnClickListener(view -> {
+            if(!authenticationBinding.authenticationCheckbox4.isChecked()){
+                authenticationBinding.authenticationCheckbox4.setChecked(true);
+
+                if(authenticationBinding.authenticationCheckbox1.isChecked() && authenticationBinding.authenticationCheckbox2.isChecked() && authenticationBinding.authenticationCheckbox3.isChecked() && authenticationBinding.authenticationCheckbox5.isChecked()){
+                    authenticationBinding.authCheckbox1.setChecked(true);
+                    authenticationBinding.authenticationCheckbox4.setChecked(true);
+                }
+            } else {
+                authenticationBinding.authenticationCheckbox4.setChecked(false);
+                authenticationBinding.authCheckbox1.setChecked(false);
+            }
+        });
+        authenticationBinding.relativelayoutAuthenticate5.setOnClickListener(view -> {
+            if(!authenticationBinding.authenticationCheckbox5.isChecked()){
+                authenticationBinding.authenticationCheckbox5.setChecked(true);
+
+                if(authenticationBinding.authenticationCheckbox1.isChecked() && authenticationBinding.authenticationCheckbox2.isChecked() && authenticationBinding.authenticationCheckbox3.isChecked() && authenticationBinding.authenticationCheckbox4.isChecked()){
+                    authenticationBinding.authCheckbox1.setChecked(true);
+                    authenticationBinding.authenticationCheckbox5.setChecked(true);
+                }
+            } else {
+                authenticationBinding.authenticationCheckbox5.setChecked(false);
+                authenticationBinding.authCheckbox1.setChecked(false);
+            }
+        });
     }
 }
