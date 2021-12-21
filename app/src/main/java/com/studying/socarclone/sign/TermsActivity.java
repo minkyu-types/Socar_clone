@@ -166,6 +166,7 @@ public class TermsActivity extends AppCompatActivity {
             } else {
                 if(!termsBinding.checkbox32.isChecked() && !termsBinding.checkbox33.isChecked()){
                     termsBinding.checkbox3.setChecked(false);
+                    termsBinding.checkbox1.setChecked(false);
                 }
                 terms_agree_3_1 = 0;
             }
@@ -178,6 +179,7 @@ public class TermsActivity extends AppCompatActivity {
             } else {
                 if(!termsBinding.checkbox31.isChecked() && !termsBinding.checkbox33.isChecked()){
                     termsBinding.checkbox3.setChecked(false);
+                    termsBinding.checkbox1.setChecked(false);
                 }
                 terms_agree_3_2 = 0;
             }
@@ -190,6 +192,7 @@ public class TermsActivity extends AppCompatActivity {
             } else {
                 if(!termsBinding.checkbox31.isChecked() && !termsBinding.checkbox32.isChecked()){
                     termsBinding.checkbox3.setChecked(false);
+                    termsBinding.checkbox1.setChecked(false);
                 }
                 terms_agree_3_3 = 0;
             }
