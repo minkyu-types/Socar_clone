@@ -1,9 +1,11 @@
 package com.studying.socarclone.sign;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -18,10 +20,12 @@ import com.studying.socarclone.databinding.ActivityAuthenticationBinding;
 
 public class AuthenticationActivity extends AppCompatActivity {
     ActivityAuthenticationBinding authenticationBinding;
-    int terms_authenticate_1;
-    int terms_authenticate_1_1, terms_authenticate_1_2, terms_authenticate_1_3, terms_authenticate_1_4, terms_authenticate_1_5;
-    int name_check, jumin_check, phonenum_check;
-    int phone_authenticate;
+    final CharSequence[] company = {"SKT", "KT", "LGU+", "SKT 알뜰폰", "KT 알뜰폰", "LGU+ 알뜰폰"};
+    String name;
+    String jumin_front, jumin_back;
+    String phone_company, phone_num;
+    String authentication_num;
+    boolean authentication_check;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,28 +35,40 @@ public class AuthenticationActivity extends AppCompatActivity {
 
         authenticationBinding.buttonCompleteAuthentication.setEnabled(false);
         authenticationBinding.buttonCompleteAuthentication.setBackgroundResource(R.color.gray);
+
+        authenticationBinding.linearlayoutAuthPhone.setOnClickListener(view -> {
+            alertDialogSelectPopup();
+        });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        authenticationBinding.imageviewAuthGo.setOnClickListener(view -> {
-            if(authenticationBinding.constraintlayoutAuth1.getVisibility() == View.GONE){
-                authenticationBinding.constraintlayoutAuth1.setVisibility(View.VISIBLE);
-            } else {
-                authenticationBinding.constraintlayoutAuth1.setVisibility(View.GONE);
-            }
-        });
-
         setAllLayoutClickListener();
-
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         authenticationBinding = null;
+    }
+
+    public void alertDialogSelectPopup(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getApplicationContext());
+
+        //제목
+        alertDialogBuilder.setTitle("통신사");
+        alertDialogBuilder.setItems(company, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
     }
 
     public void setAllLayoutClickListener() {
@@ -62,6 +78,14 @@ public class AuthenticationActivity extends AppCompatActivity {
         authenticationBinding.authenticationCheckbox3.setClickable(false);
         authenticationBinding.authenticationCheckbox4.setClickable(false);
         authenticationBinding.authenticationCheckbox5.setClickable(false);
+
+        authenticationBinding.imageviewAuthGo.setOnClickListener(view -> {
+            if(authenticationBinding.constraintlayoutAuth1.getVisibility() == View.GONE){
+                authenticationBinding.constraintlayoutAuth1.setVisibility(View.VISIBLE);
+            } else {
+                authenticationBinding.constraintlayoutAuth1.setVisibility(View.GONE);
+            }
+        });
 
         authenticationBinding.linearlayoutAuth1.setOnClickListener(view -> {
             if(!authenticationBinding.authCheckbox1.isChecked()){
