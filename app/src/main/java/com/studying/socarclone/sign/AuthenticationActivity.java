@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -55,7 +56,7 @@ public class AuthenticationActivity extends AppCompatActivity {
     }
 
     public void alertDialogSelectPopup(){
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getApplicationContext());
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         //제목
         alertDialogBuilder.setTitle("통신사");
@@ -67,6 +68,7 @@ public class AuthenticationActivity extends AppCompatActivity {
         });
 
         AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.getWindow().setGravity(Gravity.BOTTOM);
         alertDialog.show();
 
     }

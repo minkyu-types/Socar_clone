@@ -20,7 +20,7 @@ public class WarningActivity extends AppCompatActivity {
         setContentView(view);
 
         warningBinding.buttonRegisterGo.setOnClickListener(view1 -> {
-            Intent intent_register_go = new Intent(getApplicationContext(), LoginActivity.class);
+            Intent intent_register_go = new Intent(getApplicationContext(), TermsActivity.class);
             startActivity(intent_register_go);
         });
     }
