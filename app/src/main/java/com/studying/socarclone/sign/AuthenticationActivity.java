@@ -27,7 +27,8 @@ public class AuthenticationActivity extends AppCompatActivity {
     String authentication_num;
     boolean authentication_check;
     CountDownTimer timer;
-    int count;
+    int time = 180000, count = 1;
+    int second = 59;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,10 +69,31 @@ public class AuthenticationActivity extends AppCompatActivity {
 
     private void authenticationTimer(){
 
-        timer = new CountDownTimer(1800000, 1000) {
+        timer = new CountDownTimer(time, 1000) {
             @Override
             public void onTick(long l) {
+                if(time <= 179000){ // 2분 59초 남으면 분을 2로 설정
+                    authenticationBinding.textviewAuthenticationTimerMinute.setText("02:");
+                    authenticationBinding.textviewAuthenticationTimerSecond.setText(""+second);
 
+                    if(time == 120000){
+                        second = 0;
+                    }
+                } else if(time <= 119000){ // 1분 59초 남으면 분을 1로 설정
+                    authenticationBinding.textviewAuthenticationTimerMinute.setText("01:");
+                    authenticationBinding.textviewAuthenticationTimerSecond.setText(""+second);
+
+                    if(time == 60000){
+                        second = 0;
+                    }
+                } else if(time <= 59000){ // 59초 남으면 분을 0로 설정
+                    authenticationBinding.textviewAuthenticationTimerMinute.setText("00:");
+                    authenticationBinding.textviewAuthenticationTimerSecond.setText(""+second);
+
+                    if(time == 0){
+                        second = 0;
+                    }
+                }
             }
 
             @Override
@@ -134,14 +156,15 @@ public class AuthenticationActivity extends AppCompatActivity {
         });
 
         authenticationBinding.buttonCompleteAuthentication.setOnClickListener(view -> {
-
+            Intent intent_complete = new Intent(this, RegisterActivity.class);
+            startActivity(intent_complete);
         });
 
         authenticationBinding.buttonAuthentication.setOnClickListener(view -> {
 
             authenticationBinding.buttonCompleteAuthentication.setClickable(true);
             authenticationBinding.buttonCompleteAuthentication.setBackgroundResource(R.color.socar_color);
-            authenticationBinding.buttonCompleteAuthentication.setText("재발송");
+            authenticationBinding.buttonAuthentication.setText("재발송");
 
             authenticationTimer();
             timer.start();

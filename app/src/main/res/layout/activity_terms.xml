@@ -6,7 +6,7 @@
     tools:context=".sign.TermsActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DFDFDF">
+    android:background="@color/main_background">
 
     <RelativeLayout
         android:id="@+id/relativelayout_appbar"
