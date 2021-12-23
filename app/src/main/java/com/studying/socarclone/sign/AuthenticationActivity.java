@@ -3,19 +3,12 @@ package com.studying.socarclone.sign;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.CompoundButton;
 
 import com.studying.socarclone.R;
 import com.studying.socarclone.databinding.ActivityAuthenticationBinding;
@@ -38,8 +31,6 @@ public class AuthenticationActivity extends AppCompatActivity {
 
         authenticationBinding.buttonCompleteAuthentication.setEnabled(false);
         authenticationBinding.buttonCompleteAuthentication.setBackgroundResource(R.color.gray);
-
-
     }
 
     @Override
@@ -70,7 +61,7 @@ public class AuthenticationActivity extends AppCompatActivity {
         alertDialogBuilder.setItems(foreign, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                authenticationBinding.textviewAuthForeign.setText(foreign[i]);
+                authenticationBinding.textviewAuthenticationForeign.setText(foreign[i]);
 
                 dialogInterface.dismiss();
             }
@@ -113,6 +104,32 @@ public class AuthenticationActivity extends AppCompatActivity {
             startActivity(intent_back);
         });
 
+        authenticationBinding.buttonAuthentication.setOnClickListener(view -> {
+            if(!authenticationBinding.authCheckbox1.isChecked()){
+                authenticationBinding.linearlayoutAuth1.setBackgroundResource(R.drawable.shape_red_edge_error);
+            }
+
+            if(!authenticationBinding.edittextAuthenticationName.getText().equals("")){
+                authenticationBinding.edittextAuthenticationName.setBackgroundResource(R.drawable.shape_red_edge_error);
+            }
+
+            if(authenticationBinding.edittextAuthenticationJuminFirst.getText().toString().length() < 6){
+                authenticationBinding.linearlayoutAuthJumin.setBackgroundResource(R.drawable.shape_red_edge_error);
+            }
+
+            if(authenticationBinding.edittextAuthenticationJuminLast.getText().toString().length() < 1){
+                authenticationBinding.linearlayoutAuthJumin.setBackgroundResource(R.drawable.shape_red_edge_error);
+            }
+
+            if(authenticationBinding.textviewPhoneCompany.getText().toString().equals("선택")){
+                authenticationBinding.linearlayoutAuth4.setBackgroundResource(R.drawable.shape_red_edge_error);
+            }
+
+            if(authenticationBinding.edittextAuthenticationPhoneNumber.getText().toString().length() < 11){
+                authenticationBinding.linearlayoutAuth4.setBackgroundResource(R.drawable.shape_red_edge_error);
+            }
+        });
+
         authenticationBinding.imageviewAuthGo.setOnClickListener(view -> {
             if(authenticationBinding.constraintlayoutAuth1.getVisibility() == View.GONE){
                 authenticationBinding.constraintlayoutAuth1.setVisibility(View.VISIBLE);
@@ -129,6 +146,8 @@ public class AuthenticationActivity extends AppCompatActivity {
                 authenticationBinding.authenticationCheckbox3.setChecked(true);
                 authenticationBinding.authenticationCheckbox4.setChecked(true);
                 authenticationBinding.authenticationCheckbox5.setChecked(true);
+
+                authenticationBinding.constraintlayoutAuth1.setVisibility(View.GONE);
             } else {
                 authenticationBinding.authCheckbox1.setChecked(false);
                 authenticationBinding.authenticationCheckbox1.setChecked(false);

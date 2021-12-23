@@ -11,9 +11,6 @@ import com.studying.socarclone.databinding.ActivityTermsBinding;
 
 public class TermsActivity extends AppCompatActivity {
     ActivityTermsBinding termsBinding;
-    int terms_agree_1, terms_agree_2, terms_agree_3;
-    int terms_agree_2_1, terms_agree_2_2, terms_agree_2_3;
-    int terms_agree_3_1, terms_agree_3_2, terms_agree_3_3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -219,6 +216,11 @@ public class TermsActivity extends AppCompatActivity {
         termsBinding.buttonContinueRegister.setOnClickListener(view -> {
             Intent intent_continue_register = new Intent(getApplicationContext(), AuthenticationActivity.class);
             startActivity(intent_continue_register);
+        });
+
+        termsBinding.buttonTermsBack.setOnClickListener(view -> {
+            Intent intent_terms_back = new Intent(getApplicationContext(), WarningActivity.class);
+            startActivity(intent_terms_back);
         });
     }
 }
