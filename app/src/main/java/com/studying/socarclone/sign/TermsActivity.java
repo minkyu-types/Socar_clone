@@ -29,178 +29,19 @@ public class TermsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        setTermsLayoutClickListener();
+
         termsBinding.checkbox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(termsBinding.checkbox1.isChecked()){
-                    terms_agree_1 = 1;
-
                     termsBinding.buttonContinueRegister.setEnabled(true);
                     termsBinding.buttonContinueRegister.setBackgroundResource(R.color.socar_color);
                 } else {
-                    terms_agree_1 = 0;
-
                     termsBinding.buttonContinueRegister.setEnabled(false);
                     termsBinding.buttonContinueRegister.setBackgroundResource(R.color.gray);
                 }
             }
-        });
-
-        termsBinding.checkbox2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(termsBinding.checkbox2.isChecked()){
-                    terms_agree_2 = 1;
-                } else {
-                    terms_agree_2 = 0;
-                }
-            }
-        });
-
-        termsBinding.checkbox3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(termsBinding.checkbox3.isChecked()){
-                    terms_agree_3 = 1;
-
-                } else {
-                    terms_agree_3 = 0;
-                }
-            }
-        });
-
-        termsBinding.checkbox1.setOnClickListener(view -> {
-            if(termsBinding.checkbox1.isChecked()){
-                termsBinding.checkbox1.setChecked(true);
-                termsBinding.checkbox2.setChecked(true);
-                termsBinding.checkbox21.setChecked(true);
-                termsBinding.checkbox22.setChecked(true);
-                termsBinding.checkbox23.setChecked(true);
-                termsBinding.checkbox3.setChecked(true);
-                termsBinding.checkbox31.setChecked(true);
-                termsBinding.checkbox32.setChecked(true);
-                termsBinding.checkbox33.setChecked(true);
-            } else {
-                termsBinding.checkbox1.setChecked(false);
-                termsBinding.checkbox2.setChecked(false);
-                termsBinding.checkbox21.setChecked(false);
-                termsBinding.checkbox22.setChecked(false);
-                termsBinding.checkbox23.setChecked(false);
-                termsBinding.checkbox3.setChecked(false);
-                termsBinding.checkbox31.setChecked(false);
-                termsBinding.checkbox32.setChecked(false);
-                termsBinding.checkbox33.setChecked(false);
-            }
-        });
-
-        termsBinding.checkbox2.setOnClickListener(view -> {
-            if(termsBinding.checkbox2.isChecked()){
-                termsBinding.checkbox21.setChecked(true);
-                termsBinding.checkbox22.setChecked(true);
-                termsBinding.checkbox23.setChecked(true);
-
-                if(termsBinding.checkbox3.isChecked()){
-                    termsBinding.checkbox1.setChecked(true);
-                }
-            } else {
-                termsBinding.checkbox21.setChecked(false);
-                termsBinding.checkbox22.setChecked(false);
-                termsBinding.checkbox23.setChecked(false);
-
-                termsBinding.checkbox1.setChecked(false);
-            }
-        });
-
-        termsBinding.checkbox21.setOnClickListener(view -> {
-            if(termsBinding.checkbox21.isChecked() && termsBinding.checkbox22.isChecked() && termsBinding.checkbox23.isChecked()){
-                termsBinding.checkbox2.setChecked(true);
-            } else {
-                if(!termsBinding.checkbox22.isChecked() || !termsBinding.checkbox23.isChecked()){
-                    termsBinding.checkbox2.setChecked(false);
-                }
-            }
-        });
-
-        termsBinding.checkbox22.setOnClickListener(view -> {
-            if(termsBinding.checkbox21.isChecked() && termsBinding.checkbox22.isChecked() && termsBinding.checkbox23.isChecked()){
-                termsBinding.checkbox2.setChecked(true);
-            } else {
-                if(!termsBinding.checkbox22.isChecked() || !termsBinding.checkbox23.isChecked()){
-                    termsBinding.checkbox2.setChecked(false);
-                }
-            }
-        });
-
-        termsBinding.checkbox23.setOnClickListener(view -> {
-            if(termsBinding.checkbox21.isChecked() && termsBinding.checkbox22.isChecked() && termsBinding.checkbox23.isChecked()){
-                termsBinding.checkbox2.setChecked(true);
-            } else {
-                if(!termsBinding.checkbox22.isChecked() || !termsBinding.checkbox23.isChecked()){
-                    termsBinding.checkbox2.setChecked(false);
-                }
-            }
-        });
-
-        termsBinding.checkbox3.setOnClickListener(view -> {
-            if(termsBinding.checkbox3.isChecked()){
-                termsBinding.checkbox31.setChecked(true);
-                termsBinding.checkbox32.setChecked(true);
-                termsBinding.checkbox33.setChecked(true);
-
-                if(termsBinding.checkbox2.isChecked()){
-                    termsBinding.checkbox1.setChecked(true);
-                }
-            } else {
-                termsBinding.checkbox31.setChecked(false);
-                termsBinding.checkbox32.setChecked(false);
-                termsBinding.checkbox33.setChecked(false);
-
-                termsBinding.checkbox1.setChecked(false);
-            }
-        });
-
-        termsBinding.checkbox31.setOnClickListener(view -> {
-            if(termsBinding.checkbox31.isChecked()){
-                termsBinding.checkbox3.setChecked(true);
-                terms_agree_3_1 = 1;
-            } else {
-                if(!termsBinding.checkbox32.isChecked() && !termsBinding.checkbox33.isChecked()){
-                    termsBinding.checkbox3.setChecked(false);
-                    termsBinding.checkbox1.setChecked(false);
-                }
-                terms_agree_3_1 = 0;
-            }
-        });
-
-        termsBinding.checkbox32.setOnClickListener(view -> {
-            if(termsBinding.checkbox32.isChecked()){
-                termsBinding.checkbox3.setChecked(true);
-                terms_agree_3_2 = 1;
-            } else {
-                if(!termsBinding.checkbox31.isChecked() && !termsBinding.checkbox33.isChecked()){
-                    termsBinding.checkbox3.setChecked(false);
-                    termsBinding.checkbox1.setChecked(false);
-                }
-                terms_agree_3_2 = 0;
-            }
-        });
-
-        termsBinding.checkbox33.setOnClickListener(view -> {
-            if(termsBinding.checkbox33.isChecked()){
-                termsBinding.checkbox3.setChecked(true);
-                terms_agree_3_3 = 1;
-            } else {
-                if(!termsBinding.checkbox31.isChecked() && !termsBinding.checkbox32.isChecked()){
-                    termsBinding.checkbox3.setChecked(false);
-                    termsBinding.checkbox1.setChecked(false);
-                }
-                terms_agree_3_3 = 0;
-            }
-        });
-
-        termsBinding.buttonContinueRegister.setOnClickListener(view -> {
-            Intent intent_continue_register = new Intent(getApplicationContext(), AuthenticationActivity.class);
-            startActivity(intent_continue_register);
         });
     }
 
@@ -208,5 +49,176 @@ public class TermsActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         termsBinding = null;
+    }
+
+    public void setTermsLayoutClickListener(){
+        termsBinding.checkbox1.setClickable(false);
+        termsBinding.checkbox2.setClickable(false);
+        termsBinding.checkbox3.setClickable(false);
+        termsBinding.checkbox21.setClickable(false);
+        termsBinding.checkbox22.setClickable(false);
+        termsBinding.checkbox23.setClickable(false);
+        termsBinding.checkbox41.setClickable(false);
+        termsBinding.checkbox42.setClickable(false);
+        termsBinding.checkbox43.setClickable(false);
+
+        termsBinding.linearlayout1.setOnClickListener(view -> {
+            if(!termsBinding.checkbox1.isChecked()){
+                termsBinding.checkbox1.setChecked(true);
+                termsBinding.checkbox2.setChecked(true);
+                termsBinding.checkbox21.setChecked(true);
+                termsBinding.checkbox22.setChecked(true);
+                termsBinding.checkbox23.setChecked(true);
+                termsBinding.checkbox3.setChecked(true);
+                termsBinding.checkbox41.setChecked(true);
+                termsBinding.checkbox42.setChecked(true);
+                termsBinding.checkbox43.setChecked(true);
+            } else {
+                termsBinding.checkbox1.setChecked(false);
+                termsBinding.checkbox2.setChecked(false);
+                termsBinding.checkbox21.setChecked(false);
+                termsBinding.checkbox22.setChecked(false);
+                termsBinding.checkbox23.setChecked(false);
+                termsBinding.checkbox3.setChecked(false);
+                termsBinding.checkbox41.setChecked(false);
+                termsBinding.checkbox42.setChecked(false);
+                termsBinding.checkbox43.setChecked(false);
+            }
+        });
+
+        termsBinding.linearlayout2.setOnClickListener(view -> {
+            if(!termsBinding.checkbox2.isChecked()){
+                termsBinding.checkbox2.setChecked(true);
+                termsBinding.checkbox21.setChecked(true);
+                termsBinding.checkbox22.setChecked(true);
+                termsBinding.checkbox23.setChecked(true);
+
+                if(termsBinding.checkbox3.isChecked()){
+                    termsBinding.checkbox1.setChecked(true);
+                }
+            } else {
+                termsBinding.checkbox2.setChecked(false);
+                termsBinding.checkbox21.setChecked(false);
+                termsBinding.checkbox22.setChecked(false);
+                termsBinding.checkbox23.setChecked(false);
+
+                termsBinding.checkbox1.setChecked(false);
+            }
+        });
+
+        termsBinding.linearlayout21.setOnClickListener(view -> {
+            if(!termsBinding.checkbox21.isChecked()) {
+                termsBinding.checkbox21.setChecked(true);
+
+                if(termsBinding.checkbox22.isChecked() && termsBinding.checkbox23.isChecked()){
+                    termsBinding.checkbox1.setChecked(true);
+                    termsBinding.checkbox2.setChecked(true);
+                }
+            } else {
+                termsBinding.checkbox1.setChecked(false);
+                termsBinding.checkbox2.setChecked(false);
+                termsBinding.checkbox21.setChecked(false);
+            }
+        });
+
+        termsBinding.linearlayout22.setOnClickListener(view -> {
+            if(!termsBinding.checkbox22.isChecked()) {
+                termsBinding.checkbox22.setChecked(true);
+
+                if(termsBinding.checkbox21.isChecked() && termsBinding.checkbox23.isChecked()){
+                    termsBinding.checkbox1.setChecked(true);
+                    termsBinding.checkbox2.setChecked(true);
+                }
+            } else {
+                termsBinding.checkbox1.setChecked(false);
+                termsBinding.checkbox2.setChecked(false);
+                termsBinding.checkbox22.setChecked(false);
+            }
+        });
+
+        termsBinding.linearlayout23.setOnClickListener(view -> {
+            if(!termsBinding.checkbox23.isChecked()) {
+                termsBinding.checkbox23.setChecked(true);
+
+                if(termsBinding.checkbox21.isChecked() && termsBinding.checkbox22.isChecked()){
+                    termsBinding.checkbox1.setChecked(true);
+                    termsBinding.checkbox2.setChecked(true);
+                }
+            } else {
+                termsBinding.checkbox1.setChecked(false);
+                termsBinding.checkbox2.setChecked(false);
+                termsBinding.checkbox23.setChecked(false);
+            }
+        });
+
+        termsBinding.linearlayout3.setOnClickListener(view -> {
+            if(!termsBinding.checkbox3.isChecked()){
+                termsBinding.checkbox3.setChecked(true);
+                termsBinding.checkbox41.setChecked(true);
+                termsBinding.checkbox42.setChecked(true);
+                termsBinding.checkbox43.setChecked(true);
+
+                if(termsBinding.checkbox2.isChecked()){
+                    termsBinding.checkbox1.setChecked(true);
+                }
+            } else {
+                termsBinding.checkbox3.setChecked(false);
+                termsBinding.checkbox41.setChecked(false);
+                termsBinding.checkbox42.setChecked(false);
+                termsBinding.checkbox43.setChecked(false);
+
+                termsBinding.checkbox1.setChecked(false);
+            }
+        });
+
+        termsBinding.linearlayout41.setOnClickListener(view -> {
+            if(!termsBinding.checkbox41.isChecked()){
+                termsBinding.checkbox1.setChecked(true);
+                termsBinding.checkbox3.setChecked(true);
+                termsBinding.checkbox41.setChecked(true);
+            } else {
+                termsBinding.checkbox41.setChecked(false);
+
+                if(!termsBinding.checkbox42.isChecked() && !termsBinding.checkbox43.isChecked()){
+                    termsBinding.checkbox3.setChecked(false);
+                    termsBinding.checkbox1.setChecked(false);
+                }
+            }
+        });
+
+        termsBinding.linearlayout42.setOnClickListener(view -> {
+            if(!termsBinding.checkbox42.isChecked()){
+                termsBinding.checkbox1.setChecked(true);
+                termsBinding.checkbox3.setChecked(true);
+                termsBinding.checkbox42.setChecked(true);
+            } else {
+                termsBinding.checkbox42.setChecked(false);
+
+                if(!termsBinding.checkbox41.isChecked() && !termsBinding.checkbox43.isChecked()){
+                    termsBinding.checkbox3.setChecked(false);
+                    termsBinding.checkbox1.setChecked(false);
+                }
+            }
+        });
+
+        termsBinding.linearlayout43.setOnClickListener(view -> {
+            if(!termsBinding.checkbox43.isChecked()){
+                termsBinding.checkbox1.setChecked(true);
+                termsBinding.checkbox3.setChecked(true);
+                termsBinding.checkbox43.setChecked(true);
+            } else {
+                termsBinding.checkbox43.setChecked(false);
+
+                if(!termsBinding.checkbox41.isChecked() && !termsBinding.checkbox42.isChecked()){
+                    termsBinding.checkbox3.setChecked(false);
+                    termsBinding.checkbox1.setChecked(false);
+                }
+            }
+        });
+
+        termsBinding.buttonContinueRegister.setOnClickListener(view -> {
+            Intent intent_continue_register = new Intent(getApplicationContext(), AuthenticationActivity.class);
+            startActivity(intent_continue_register);
+        });
     }
 }

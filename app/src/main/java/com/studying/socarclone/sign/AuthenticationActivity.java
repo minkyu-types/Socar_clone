@@ -1,6 +1,7 @@
 package com.studying.socarclone.sign;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,7 @@ import com.studying.socarclone.databinding.ActivityAuthenticationBinding;
 public class AuthenticationActivity extends AppCompatActivity {
     ActivityAuthenticationBinding authenticationBinding;
     final CharSequence[] company = {"SKT", "KT", "LGU+", "SKT 알뜰폰", "KT 알뜰폰", "LGU+ 알뜰폰"};
+    final CharSequence[] foreign = {"내국인", "외국인"};
     String name;
     String jumin_front, jumin_back;
     String phone_company, phone_num;
@@ -37,16 +39,21 @@ public class AuthenticationActivity extends AppCompatActivity {
         authenticationBinding.buttonCompleteAuthentication.setEnabled(false);
         authenticationBinding.buttonCompleteAuthentication.setBackgroundResource(R.color.gray);
 
-        authenticationBinding.linearlayoutAuthPhone.setOnClickListener(view -> {
-            alertDialogSelectPopup();
-        });
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        setAuthenticationLayoutClickListener();
 
-        setAllLayoutClickListener();
+        authenticationBinding.linearlayoutAuthForeign.setOnClickListener(view -> {
+            alertDialogForeignSelectPopup();
+        });
+
+        authenticationBinding.linearlayoutAuthPhone.setOnClickListener(view -> {
+            alertDialogPhoneSelectPopup();
+        });
     }
 
     @Override
@@ -55,14 +62,16 @@ public class AuthenticationActivity extends AppCompatActivity {
         authenticationBinding = null;
     }
 
-    public void alertDialogSelectPopup(){
+    public void alertDialogForeignSelectPopup(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         //제목
-        alertDialogBuilder.setTitle("통신사");
-        alertDialogBuilder.setItems(company, new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setTitle("국적 선택");
+        alertDialogBuilder.setItems(foreign, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                authenticationBinding.textviewAuthForeign.setText(foreign[i]);
+
                 dialogInterface.dismiss();
             }
         });
@@ -70,16 +79,39 @@ public class AuthenticationActivity extends AppCompatActivity {
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.getWindow().setGravity(Gravity.BOTTOM);
         alertDialog.show();
-
     }
 
-    public void setAllLayoutClickListener() {
+    public void alertDialogPhoneSelectPopup(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
+        //제목
+        alertDialogBuilder.setTitle("통신사");
+        alertDialogBuilder.setItems(company, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                authenticationBinding.textviewPhoneCompany.setText(company[i]);
+
+                dialogInterface.dismiss();
+            }
+        });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.getWindow().setGravity(Gravity.BOTTOM);
+        alertDialog.show();
+    }
+
+    public void setAuthenticationLayoutClickListener() {
+        authenticationBinding.authCheckbox1.setClickable(false);
         authenticationBinding.authenticationCheckbox1.setClickable(false);
         authenticationBinding.authenticationCheckbox2.setClickable(false);
         authenticationBinding.authenticationCheckbox3.setClickable(false);
         authenticationBinding.authenticationCheckbox4.setClickable(false);
         authenticationBinding.authenticationCheckbox5.setClickable(false);
+
+        authenticationBinding.buttonAuthBack.setOnClickListener(view -> {
+            Intent intent_back = new Intent(this, TermsActivity.class);
+            startActivity(intent_back);
+        });
 
         authenticationBinding.imageviewAuthGo.setOnClickListener(view -> {
             if(authenticationBinding.constraintlayoutAuth1.getVisibility() == View.GONE){

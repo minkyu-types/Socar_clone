@@ -15,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent">
         <Button
+            android:id="@+id/button_auth_back"
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:background="@drawable/arrow_goback"
@@ -404,7 +405,10 @@
                 android:layout_height="wrap_content"
                 android:text="선택"
                 android:textSize="16dp"
-                android:layout_gravity="center_vertical"/>
+                android:textAlignment="textStart"
+                android:maxLength="5"
+                android:maxLines="1"
+                android:ellipsize="end"/>
             <ImageView
                 android:id="@+id/imageview_auth_arrow2"
                 android:layout_width="24dp"
