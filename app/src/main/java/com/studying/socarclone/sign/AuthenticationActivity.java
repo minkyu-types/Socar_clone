@@ -3,6 +3,7 @@ package com.studying.socarclone.sign;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.Gravity;
 import android.view.View;
 
@@ -13,6 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.studying.socarclone.R;
 import com.studying.socarclone.databinding.ActivityAuthenticationBinding;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class AuthenticationActivity extends AppCompatActivity {
     ActivityAuthenticationBinding authenticationBinding;
     final CharSequence[] company = {"SKT", "KT", "LGU+", "SKT 알뜰폰", "KT 알뜰폰", "LGU+ 알뜰폰"};
@@ -22,6 +26,7 @@ public class AuthenticationActivity extends AppCompatActivity {
     String phone_company, phone_num;
     String authentication_num;
     boolean authentication_check;
+    int minute = 2, second = 59;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,7 +58,22 @@ public class AuthenticationActivity extends AppCompatActivity {
         authenticationBinding = null;
     }
 
-    public void alertDialogForeignSelectPopup(){
+    private void authenticationTimer(){
+
+        CountDownTimer timer = new CountDownTimer(3000, 1000) {
+            @Override
+            public void onTick(long l) {
+
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        }.start();
+    }
+
+    private void alertDialogForeignSelectPopup(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         //제목
@@ -72,7 +92,7 @@ public class AuthenticationActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void alertDialogPhoneSelectPopup(){
+    private void alertDialogPhoneSelectPopup(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         //제목
@@ -91,7 +111,7 @@ public class AuthenticationActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void setAuthenticationLayoutClickListener() {
+    private void setAuthenticationLayoutClickListener() {
         authenticationBinding.authCheckbox1.setClickable(false);
         authenticationBinding.authenticationCheckbox1.setClickable(false);
         authenticationBinding.authenticationCheckbox2.setClickable(false);
@@ -104,7 +124,16 @@ public class AuthenticationActivity extends AppCompatActivity {
             startActivity(intent_back);
         });
 
+        authenticationBinding.buttonCompleteAuthentication.setOnClickListener(view -> {
+
+        });
+
         authenticationBinding.buttonAuthentication.setOnClickListener(view -> {
+
+            authenticationBinding.buttonCompleteAuthentication.setClickable(true);
+            authenticationBinding.buttonCompleteAuthentication.setBackgroundResource(R.color.socar_color);
+            authenticationBinding.buttonCompleteAuthentication.setText("재발송");
+
             if(!authenticationBinding.authCheckbox1.isChecked()){
                 authenticationBinding.linearlayoutAuth1.setBackgroundResource(R.drawable.shape_red_edge_error);
             }
