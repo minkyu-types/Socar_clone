@@ -10,5 +10,5 @@
     <color name="socar_color">#2FA9FA</color>
     <color name="gray">#959494</color>
     <color name="light_gray">#C3C3C3</color>
-    2FA9FA
+    <color name="red">#FF0000</color>
 </resources>

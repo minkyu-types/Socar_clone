@@ -26,7 +26,8 @@ public class AuthenticationActivity extends AppCompatActivity {
     String phone_company, phone_num;
     String authentication_num;
     boolean authentication_check;
-    int minute = 2, second = 59;
+    CountDownTimer timer;
+    int count;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,11 +57,18 @@ public class AuthenticationActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         authenticationBinding = null;
+
+        timer.cancel();
+        try{
+            timer.cancel();
+        } catch (Exception e){}
+        timer = null;
+        finish();
     }
 
     private void authenticationTimer(){
 
-        CountDownTimer timer = new CountDownTimer(3000, 1000) {
+        timer = new CountDownTimer(1800000, 1000) {
             @Override
             public void onTick(long l) {
 
@@ -68,7 +76,8 @@ public class AuthenticationActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-
+                authenticationBinding.textviewAuthenticationTimerMinute.setText("시간");
+                authenticationBinding.textviewAuthenticationTimerSecond.setText("만료");
             }
         }.start();
     }
@@ -133,6 +142,9 @@ public class AuthenticationActivity extends AppCompatActivity {
             authenticationBinding.buttonCompleteAuthentication.setClickable(true);
             authenticationBinding.buttonCompleteAuthentication.setBackgroundResource(R.color.socar_color);
             authenticationBinding.buttonCompleteAuthentication.setText("재발송");
+
+            authenticationTimer();
+            timer.start();
 
             if(!authenticationBinding.authCheckbox1.isChecked()){
                 authenticationBinding.linearlayoutAuth1.setBackgroundResource(R.drawable.shape_red_edge_error);
