@@ -67,6 +67,7 @@ public class AuthenticationActivity extends AppCompatActivity {
         finish();
     }
 
+    // 타이머
     private void authenticationTimer(){
 
         timer = new CountDownTimer(time, 1000) {
@@ -104,6 +105,7 @@ public class AuthenticationActivity extends AppCompatActivity {
         }.start();
     }
 
+    // 커스텀 국적 콤보박스 팝업
     private void alertDialogForeignSelectPopup(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
@@ -123,6 +125,7 @@ public class AuthenticationActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
+    // 커스텀 통신사 콤보박스 팝업
     private void alertDialogPhoneSelectPopup(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
@@ -142,6 +145,7 @@ public class AuthenticationActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
+    // 클릭 리스너
     private void setAuthenticationLayoutClickListener() {
         authenticationBinding.authCheckbox1.setClickable(false);
         authenticationBinding.authenticationCheckbox1.setClickable(false);
@@ -151,12 +155,12 @@ public class AuthenticationActivity extends AppCompatActivity {
         authenticationBinding.authenticationCheckbox5.setClickable(false);
 
         authenticationBinding.buttonAuthBack.setOnClickListener(view -> {
-            Intent intent_back = new Intent(this, TermsActivity.class);
+            Intent intent_back = new Intent(getApplicationContext(), TermsActivity.class);
             startActivity(intent_back);
         });
 
         authenticationBinding.buttonCompleteAuthentication.setOnClickListener(view -> {
-            Intent intent_complete = new Intent(this, RegisterActivity.class);
+            Intent intent_complete = new Intent(getApplicationContext(), RegisterActivity.class);
             startActivity(intent_complete);
         });
 
