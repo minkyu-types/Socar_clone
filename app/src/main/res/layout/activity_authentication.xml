@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".sign.AuthenticationActivity"
+    tools:context=".initiate.Authentication.AuthenticationActivity"
     android:background="@color/main_background">
 
     <RelativeLayout
@@ -344,7 +344,9 @@
                     android:autoSizeMaxTextSize="24dp"
                     android:autoSizeStepGranularity="2dp"
                     android:maxLength="8"
+                    android:inputType="text"
                     android:paddingLeft="12dp"
+                    android:nextFocusDown="@id/edittext_authentication_jumin_first"
                     android:importantForAutofill="yes"/>
             </LinearLayout>
 
@@ -388,7 +390,8 @@
                     android:autoSizeStepGranularity="2dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginLeft="12dp"
-                    android:layout_marginBottom="12dp"/>
+                    android:layout_marginBottom="12dp"
+                    android:nextFocusDown="@id/edittext_authentication_jumin_last"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -411,7 +414,8 @@
                     android:autoSizeMaxTextSize="24dp"
                     android:autoSizeStepGranularity="2dp"
                     android:maxLength="1"
-                    android:letterSpacing="0.05"/>
+                    android:letterSpacing="0.05"
+                    android:nextFocusDown="@id/edittext_authentication_phone_number"/>
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -498,7 +502,8 @@
                     android:autoSizeMaxTextSize="24dp"
                     android:autoSizeStepGranularity="2dp"
                     android:paddingLeft="12dp"
-                    android:importantForAutofill="yes"/>
+                    android:importantForAutofill="yes"
+                    android:nextFocusDown="@id/edittext_authentication_number"/>
             </LinearLayout>
 
             <Button
@@ -537,7 +542,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:hint="인증번호 6자리 입력"/>
+                    android:hint="인증번호 6자리 입력"
+                    android:inputType="number"
+                    android:imeOptions="actionDone"/>
                 <LinearLayout
                     android:id="@+id/linearlayout_authentication_timer"
                     android:layout_width="wrap_content"

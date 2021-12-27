@@ -1,4 +1,4 @@
-package com.studying.socarclone.starting;
+package com.studying.socarclone.initiate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,12 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.studying.socarclone.databinding.ActivityGuideBinding;
-import com.studying.socarclone.sign.LoginActivity;
-import com.studying.socarclone.sign.TermsActivity;
-import com.studying.socarclone.sign.WarningActivity;
+import com.studying.socarclone.sign.login.LoginActivity;
 
 public class GuideActivity extends AppCompatActivity {
-    ImageViewPagerAdapter imageViewPagerAdapter;
+    IVpagerAdapterforGuide imageViewPagerAdapter;
     ActivityGuideBinding guideBinding;
     int itemCount = 5;
 
@@ -21,7 +19,7 @@ public class GuideActivity extends AppCompatActivity {
         guideBinding = ActivityGuideBinding.inflate(getLayoutInflater());
         setContentView(guideBinding.getRoot());
 
-        imageViewPagerAdapter = new ImageViewPagerAdapter(this);
+        imageViewPagerAdapter = new IVpagerAdapterforGuide(this);
         guideBinding.viewpagerImage.setAdapter(imageViewPagerAdapter);
         guideBinding.viewpagerImage.setCurrentItem(itemCount);
         guideBinding.viewpagerImage.setOffscreenPageLimit(3);

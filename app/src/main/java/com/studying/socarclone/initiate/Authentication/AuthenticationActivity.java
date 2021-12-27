@@ -1,4 +1,4 @@
-package com.studying.socarclone.sign;
+package com.studying.socarclone.initiate.Authentication;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,9 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.studying.socarclone.R;
 import com.studying.socarclone.databinding.ActivityAuthenticationBinding;
-
-import java.util.Timer;
-import java.util.TimerTask;
+import com.studying.socarclone.initiate.TermsActivity;
+import com.studying.socarclone.sign.register.RegisterActivity;
 
 public class AuthenticationActivity extends AppCompatActivity {
     ActivityAuthenticationBinding authenticationBinding;
@@ -36,8 +35,8 @@ public class AuthenticationActivity extends AppCompatActivity {
         authenticationBinding = ActivityAuthenticationBinding.inflate(getLayoutInflater());
         setContentView(authenticationBinding.getRoot());
 
-        authenticationBinding.buttonCompleteAuthentication.setEnabled(false);
-        authenticationBinding.buttonCompleteAuthentication.setBackgroundResource(R.color.gray);
+        authenticationBinding.buttonCompleteAuthentication.setEnabled(true);
+        authenticationBinding.buttonCompleteAuthentication.setBackgroundResource(R.color.socar_color);
     }
 
     @Override
@@ -51,6 +50,11 @@ public class AuthenticationActivity extends AppCompatActivity {
 
         authenticationBinding.linearlayoutAuthPhone.setOnClickListener(view -> {
             alertDialogPhoneSelectPopup();
+        });
+
+        authenticationBinding.buttonCompleteAuthentication.setOnClickListener(view -> {
+            Intent intent_complete = new Intent(this, RegisterActivity.class);
+            startActivity(intent_complete);
         });
     }
 
@@ -157,11 +161,6 @@ public class AuthenticationActivity extends AppCompatActivity {
         authenticationBinding.buttonAuthBack.setOnClickListener(view -> {
             Intent intent_back = new Intent(getApplicationContext(), TermsActivity.class);
             startActivity(intent_back);
-        });
-
-        authenticationBinding.buttonCompleteAuthentication.setOnClickListener(view -> {
-            Intent intent_complete = new Intent(getApplicationContext(), RegisterActivity.class);
-            startActivity(intent_complete);
         });
 
         authenticationBinding.buttonAuthentication.setOnClickListener(view -> {

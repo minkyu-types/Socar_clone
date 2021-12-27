@@ -1,4 +1,4 @@
-package com.studying.socarclone;
+package com.studying.socarclone.initiate;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -15,7 +15,7 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.studying.socarclone.starting.GuideActivity;
+import com.studying.socarclone.R;
 
 public class AuthorityActivity extends AppCompatActivity {
     TextView textview_confirm;

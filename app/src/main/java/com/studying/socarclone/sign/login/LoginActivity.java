@@ -1,22 +1,12 @@
-package com.studying.socarclone.sign;
+package com.studying.socarclone.sign.login;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toolbar;
 
-import com.studying.socarclone.R;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.studying.socarclone.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {

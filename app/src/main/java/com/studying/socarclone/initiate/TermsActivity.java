@@ -1,4 +1,4 @@
-package com.studying.socarclone.sign;
+package com.studying.socarclone.initiate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.studying.socarclone.R;
 import com.studying.socarclone.databinding.ActivityTermsBinding;
+import com.studying.socarclone.initiate.Authentication.AuthenticationActivity;
 
 public class TermsActivity extends AppCompatActivity {
     ActivityTermsBinding termsBinding;

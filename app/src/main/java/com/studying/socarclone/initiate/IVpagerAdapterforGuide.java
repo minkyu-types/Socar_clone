@@ -1,4 +1,4 @@
-package com.studying.socarclone.starting;
+package com.studying.socarclone.initiate;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,11 +11,11 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.studying.socarclone.R;
 
-public class ImageViewPagerAdapter extends PagerAdapter {
+public class IVpagerAdapterforGuide extends PagerAdapter {
     private Context mContext = null;
     private int[] images = {R.drawable.imageview_num1, R.drawable.imageview_num2, R.drawable.imageview_num3, R.drawable.imageview_num4, R.drawable.imageview_num5};
 
-    public ImageViewPagerAdapter(Context context){
+    public IVpagerAdapterforGuide(Context context){
         mContext = context;
     }
 

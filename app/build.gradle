@@ -12,12 +12,14 @@ android {
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildFeatures{
         viewBinding = true
+        dataBinding = true
     }
 
     buildTypes {
@@ -34,6 +36,7 @@ android {
 
 dependencies {
 
+    implementation 'com.android.support:multidex:1.0.3'
     implementation platform('com.google.firebase:firebase-bom:29.0.2')
     implementation 'com.google.firebase:firebase-auth'
     implementation 'androidx.appcompat:appcompat:1.4.0'

@@ -1,4 +1,4 @@
-package com.studying.socarclone.sign;
+package com.studying.socarclone.sign.login;
 
 import androidx.lifecycle.ViewModel;
 

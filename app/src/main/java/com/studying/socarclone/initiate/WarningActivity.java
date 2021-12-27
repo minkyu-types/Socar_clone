@@ -1,4 +1,4 @@
-package com.studying.socarclone.sign;
+package com.studying.socarclone.initiate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.studying.socarclone.R;
 import com.studying.socarclone.databinding.ActivityWarningBinding;
 
 public class WarningActivity extends AppCompatActivity {

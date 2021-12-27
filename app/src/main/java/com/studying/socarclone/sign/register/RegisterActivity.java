@@ -1,11 +1,13 @@
-package com.studying.socarclone.sign;
+package com.studying.socarclone.sign.register;
+
+import android.content.Intent;
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-
 import com.studying.socarclone.R;
 import com.studying.socarclone.databinding.ActivityRegisterBinding;
+import com.studying.socarclone.initiate.Authentication.AuthenticationActivity;
 
 public class RegisterActivity extends AppCompatActivity {
     ActivityRegisterBinding registerBinding;
@@ -20,6 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        edittextChangeListener();
 
         registerBinding.buttonCompleteRegister.setClickable(false);
         registerBinding.buttonCompleteRegister.setBackgroundResource(R.color.gray);
@@ -40,5 +43,10 @@ public class RegisterActivity extends AppCompatActivity {
                 registerBinding.buttonCompleteRegister.setBackgroundResource(R.color.socar_color);
             }
         }
+
+        registerBinding.buttonRegisterBack.setOnClickListener(view -> {
+            Intent intent_back = new Intent(this, AuthenticationActivity.class);
+            startActivity(intent_back);
+        });
     }
 }

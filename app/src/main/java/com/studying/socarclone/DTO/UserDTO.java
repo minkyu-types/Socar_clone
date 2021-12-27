@@ -1,4 +1,4 @@
-package com.studying.socarclone;
+package com.studying.socarclone.DTO;
 
 public class UserDTO {
 

@@ -15,14 +15,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SocarClone">
-        <activity android:name=".sign.RegisterActivity"></activity>
-        <activity android:name=".sign.TermsActivity" />
-        <activity android:name=".sign.WarningActivity" />
-        <activity android:name=".sign.LoginActivity" />
-        <activity android:name=".sign.AuthenticationActivity" />
-        <activity android:name=".starting.GuideActivity" />
+        <activity android:name=".sign.register.RegisterActivity"></activity>
+        <activity android:name=".initiate.TermsActivity" />
+        <activity android:name=".initiate.WarningActivity" />
+        <activity android:name=".sign.login.LoginActivity" />
+        <activity android:name=".initiate.Authentication.AuthenticationActivity" />
+        <activity android:name=".initiate.GuideActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".AuthorityActivity">
+        <activity android:name=".initiate.AuthorityActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
