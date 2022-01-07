@@ -2,6 +2,9 @@ package com.studying.socarclone.initiate;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.CompoundButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +15,9 @@ import com.studying.socarclone.initiate.Authentication.AuthenticationActivity;
 
 public class TermsActivity extends AppCompatActivity {
     ActivityTermsBinding termsBinding;
+    Animation translateUp;
+    Animation translateDown;
+    boolean isPageOpen = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +32,20 @@ public class TermsActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
         setTermsLayoutClickListener();
+        setTermsLayoutCheckedListener();
 
+        translateUp = AnimationUtils.loadAnimation(this, R.anim.translate_up);
+        translateDown = AnimationUtils.loadAnimation(this, R.anim.translate_down);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        termsBinding = null;
+    }
+
+    private void setTermsLayoutCheckedListener(){
         termsBinding.checkbox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -41,15 +58,20 @@ public class TermsActivity extends AppCompatActivity {
                 }
             }
         });
+
+        termsBinding.checkbox2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(termsBinding.checkbox2.isChecked()){
+                    termsBinding.linearlayout2Main.setVisibility(View.GONE);
+                } else {
+                    termsBinding.linearlayout2Main.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        termsBinding = null;
-    }
-
-    public void setTermsLayoutClickListener(){
+    private void setTermsLayoutClickListener(){
         termsBinding.checkbox1.setClickable(false);
         termsBinding.checkbox2.setClickable(false);
         termsBinding.checkbox3.setClickable(false);

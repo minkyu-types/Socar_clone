@@ -22,31 +22,14 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        edittextChangeListener();
 
-        registerBinding.buttonCompleteRegister.setClickable(false);
-        registerBinding.buttonCompleteRegister.setBackgroundResource(R.color.gray);
+//        registerBinding.buttonCompleteRegister.setClickable(false);
+//        registerBinding.buttonCompleteRegister.setBackgroundResource(R.color.gray);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         registerBinding = null;
-    }
-
-    private void edittextChangeListener(){
-        if(!registerBinding.edittextRegisterId.getText().equals("")
-                && !registerBinding.edittextRegisterPassword.getText().equals("")){
-
-            if(registerBinding.edittextRegisterPassword.getText().equals(registerBinding.edittextRegisterPasswordCheck.getText())){
-                registerBinding.buttonCompleteRegister.setClickable(true);
-                registerBinding.buttonCompleteRegister.setBackgroundResource(R.color.socar_color);
-            }
-        }
-
-        registerBinding.buttonRegisterBack.setOnClickListener(view -> {
-            Intent intent_back = new Intent(this, AuthenticationActivity.class);
-            startActivity(intent_back);
-        });
     }
 }
